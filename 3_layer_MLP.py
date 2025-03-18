@@ -10,7 +10,7 @@ X, y = df.iloc[:, :-1], df.iloc[:, -1]
 X = X.to_numpy()
 y = y.to_numpy().reshape(-1, 1)
 
-# Fixed train_test_split call - parameters were in wrong order
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 
@@ -48,7 +48,6 @@ def forward_propagation(X, parameters):
     w3 = parameters["w3"]
     b3 = parameters["b3"]
 
-    # Fixed matrix multiplication
     Z1 = np.dot(X, w1) + b1
     A1 = relu(Z1)
     Z2 = np.dot(A1, w2) + b2
