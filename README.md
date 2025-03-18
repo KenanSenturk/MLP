@@ -71,7 +71,7 @@ Tüm modeller için:
 - İki ve üç katmanlı modeller için, iterasyon sayısının etkisini görmek amacıyla 100'den 1000'e kadar 100'er artışlarla farklı iterasyon sayıları denenmiştir
 
 ## 3. Sonuçlar (Results)
-İki ve üç katmanlı MLP modelleri için farklı iterasyon sayısı değerlerinde elde edilen doğruluk oranları tablolar halinde kaydedilmiştir. Scikit-learn MLPClassifier modeli için ise doğruluk, kesinlik, duyarlılık ve F1 skoru hesaplanmıştır.
+İki ve üç katmanlı MLP modelleri için farklı iterasyon sayısı değerlerinde elde edilen doğruluk oranları tablolar halinde kaydedilmiştir. Scikit-learn MLPClassifier modeli için ise doğruluk, kesinlik, duyarlılık ve F1 skoru hesaplanmıştır. Sonuçlar incelendiğinde iki katmanlı modelin üç katmanlıya göre bu veri seti özelinde daha iyi sonuç gösterdiği görülmüştür. iki katmanlı model 800. iterasyondan sonra %90 doğruluk skoru üstüne çıkarken üç katmanlı model 900. iterasyondan sonra %90 üzerine çıkmıştır. 
 
 İki katmanlı MLP modelinin iterasyon sayısına göre doğruluk oranları:
 - İterasyonlar arttıkça doğruluk oranı genellikle artmıştır
