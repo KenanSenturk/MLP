@@ -16,7 +16,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 
 def init_weights(n_x, n_h, n_y):
-
+# initialize weights and biases
     w1 = np.random.randn(n_x, n_h) * np.sqrt(2.0 / n_x)
     b1 = np.zeros((1, n_h))
     w2 = np.random.randn(n_h, n_y) * np.sqrt(2.0 / n_h)
@@ -33,15 +33,16 @@ def init_weights(n_x, n_h, n_y):
 
 
 def relu(Z):
+    # define relu function
     return np.maximum(0, Z)
 
 
 def relu_derivative(Z):
+    # define derivative of relu function for backpropagation
     return Z > 0
 
 
 def forward_propagation(X, parameters):
-
     w1 = parameters["w1"]
     b1 = parameters["b1"]
     w2 = parameters["w2"]
@@ -99,7 +100,7 @@ def backpropagation(X, Y, cache, parameters):
 
 
 def update_parameters(parameters, grads, learning_rate=0.01):
-
+    
     w1 = parameters["w1"]
     b1 = parameters["b1"]
     w2 = parameters["w2"]
@@ -127,7 +128,7 @@ def update_parameters(parameters, grads, learning_rate=0.01):
 
 def predict(parameters, X):
 
-    A2, _ = forward_propagation(X, parameters)
+    A2, cache = forward_propagation(X, parameters)
     predictions = A2 > 0.5
     return predictions
 
@@ -154,7 +155,7 @@ results = []
 parameters_n_steps = [i for i in range(100, 1100, 100)]
 
 for n_step in parameters_n_steps:
-    # Using 10 neurons in the hidden layer
+    
     parameters = nn_model(X_train, y_train, X_train.shape[1], n_h=6, n_y=1,
                           n_steps=n_step, learning_rate=0.003, print_cost=False)
     predicts = predict(parameters, X_test)
